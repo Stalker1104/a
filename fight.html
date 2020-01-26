@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300&display=swap&subset=cyrillic,cyrillic-ext,greek,latin-ext,vietnamese" rel="stylesheet">
+    <!--<link rel="stylesheet" href="style.css">-->
+    
+    <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+    <title>Tournirs fight animation</title>
+</head>
+
+<body>
+
+
+
+
+
+    <div id="home"style="display:none">
+
+
+        <img src="1.png" style="position: absolute;left:27%;width:47%">
+        <button id="normal" style="background-color:green; position: absolute;top:52%;left: 34.5%;border-top-width: 0px;border-left-width: 0px;border-bottom-width: 0px;border-right-width: 0px;width: 9%;height: 12%;">Обычный бой</button>
+        <button id="hell" style="background-color:red;position: absolute;top: 52%;left: 57.5%;border-top-width: 0px;border-left-width: 0px;border-bottom-width: 0px;border-right-width: 0px;width: 9%;height: 12%;">Ад</button>
+        <button id="campania" style="background-color:red;position: absolute;top: 52%;left: 46%;border-top-width: 0px;border-left-width: 0px;border-bottom-width: 0px;border-right-width: 0px;width: 9%;height: 12%;">Кампания</button>
+        <button id="market" style="background-color:green;position: absolute;top: 66.8%;left: 32.9%;border-top-width: 0px;border-left-width: 0px;border-bottom-width: 0px;border-right-width: 0px;width: 38%;height: 6%;">Магазин</button>
+        <button id="zadania" style="background-color:red;position: absolute;top: 73.5%;left: 32.9%;border-top-width: 0px;border-left-width: 0px;border-bottom-width: 0px;border-right-width: 0px;width: 9.1%;height: 6%;">Задания</button>
+
+        <button id="person2" style="background-color:green; position:absolute;top: 73.5%;left: 42.5%;border-top-width: 0px;border-left-width: 0px;border-bottom-width: 0px;border-right-width: 0px;width: 9.1%;height: 6%;">Персонаж</button>
+        <button id="sumka" style="background-color:green; position:absolute;top: 73.5%;left: 52.13%;border-top-width: 0px;border-left-width: 0px;border-bottom-width: 0px;border-right-width: 0px;width: 9.1%;height: 6%;">Сумка</button>
+        <button id="altar" style="background-color:green;position: absolute;top: 73.5%;left: 61.75%;border-top-width: 0px;border-left-width: 0px;border-bottom-width: 0px;border-right-width: 0px;width: 9.1%;height: 6%;">Алтарь</button>
+        <!--<button id="exit" style="background-color:green;position: absolute;top: 450px;left: 525px;border-top-width: 0px;border-left-width: 0px;border-bottom-width: 0px;border-right-width: 0px;width: 9.1%;height: 10%;">ВЫЙТИ</button>
+        --><script>
+        normal.onclick=function(){
+            x = 6;
+            y = 78;
+            hp = 1306;
+            bosshp=10000;
+            person_damage_up = 55;
+            person_damage_prosra = 1;
+            boss_damage_up = 25;
+            boss_damage_prosra = 1;
+            pobeg = 0;
+            hp_count.innerHTML=hp;
+            hp_progress.value=hp;
+            hp_progress.max=hp;
+            oerso.style="position: absolute;height: 50%;top: 50%;left:0%"
+            bosss.style="position: absolute;height: 100%;left: 79.7%;z-index: 1;"
+            ded.style.display="none"
+            oerso.src="perso.jpg"
+            bosss.src="bos.png"
+            home.style.display="none";
+            fight.style.display="block"
+            run.style.display="block"
+            atack.style.display="block"
+            hp_poision.style.display="block"
+            live.style.display="none"
+            boss_hp_progress.style.display="block"
+            boss_hp_progress.value=bosshp;
+            boss_hp_progress.max=bosshp;
+            
+        }
+        </script></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<div id="prepare_for_fight">
+    <div id="left"style="position:absolute;height:100%;width:20%;background-color:blue;"></div>
+    <div id="right"style="height:100%;width:20%;left:99%;background-color:red;"></div>
+    <img src="vs_1.jpg" alt="" style="position:absolute;height: 100%;">
+</div>-->
+
+
+    <div id="fight" style="display: block;">
+        <div id="fight_place" style="position:absolute;left:5%;  width:89%;height:49%;  border-radius:2px;border: 0.3vh dashed gray;/*background-image: url(fight_back.jpg);*/">
+            <img src="fight_back.jpg" style="width: 100%;height: 100%;">
+            <!--<div style="position:absolute;width: 100%;height: 100%;background-color: rgba(0,0,0,0.5);"></div>-->
+            <img src="perso.jpg" id="oerso" style="position: absolute;height: 50%;top: 50%;left:0%">
+            <img src="fire_ball_person.png" id="fire_ball_person" style="position: absolute;height: 27%;left: 6%;top: 70%;display:none;">
+            <img src="fire_ball_boss.jpg" id="fire_ball_boss" style="position: absolute;height: 75%;left: 10%;top: 30%;display:none;">
+            <div id="person_damage" style="position: absolute;color:rgba(255, 0, 0, 1);width: 8%;text-align: center;top: 55%;display:none;">-126</div>
+            <img src="bos.png" id="bosss" style="position: absolute;height: 100%;left: 79.7%;z-index: 1;">
+            <div id="boss_damage" style="position: absolute;color:rgba(255, 0, 0, 1);width: 16%;text-align: center;top: 25%;left: 80%;display: none;z-index: 2;">-1026</div>
+            <!--<div id="boss_cover" style="position: absolute;height: 100%;left: 79.7%;color:rgba(255, 0, 255, 0.700);display:block;width: 20%;z-index: 2;"></div>-->
+        </div>
+        <div id="information">
+            <div id="ded" style="font-family: 'East Sea Dokdo', cursive;position:absolute;left: 20%;top: 25%;width: 50%;height: 25%;color: red;text-align: center;font-size: -webkit-xxx-large;display: none;">YOU DIED</div>
+            <div id="hp_count" style="text-align: center;width: 99%;top: 95%;height: 5%;position: absolute;z-index: 2;font-size: 4vh;">140</div>
+            <progress id="hp_progress" min="0" max="100" value="64" style="width: 99%;top: 95%;height: 5%;position: absolute;z-index: 1;"></progress>
+            <progress id="boss_hp_progress" min="0" max="100" value="64" style="width: 10%;top: 3%;left: 78%;height: 1%;position: absolute;z-index: 1;"></progress>
+
+        </div>
+        <button id="run" style="position: absolute;top: 69%;left: 55%;border: 0.3vh dashed blue;width: 13%;height: 10%;border-radius: 1vh;">Сбежать</button>
+        <button id="atack" style="position: absolute;top: 69%;left: 11%;border: 0.3vh dashed red;width: 13%;height: 10%;border-radius: 1vh; ">Атака</button>
+        <button id="hp_poision" style="position: absolute;top: 69%;left: 33%;border: 0.3vh dashed green;width: 13%;height: 10%;border-radius: 1vh; ">Зелье здоровья</button>
+        <button id="live" style="position: absolute;top: 69%;left: 43%;border: 0.3vh dashed gray;width: 13%;height: 10%;border-radius: 1vh;display: none;">Возродится</button>
+        <script>
+            function getRandomInt(min, max) {
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
+            var x = 6;
+            var y = 78;
+            var hp = 1306;
+            var bosshp=10000;
+            var person_damage_up = 55;
+            var person_damage_prosra = 1;
+            var boss_damage_up = 25;
+            var boss_damage_prosra = 1;
+            var pobeg = 0;
+
+            live.onclick = function() {
+                home.style.display="block";
+                fight.style.display="none"
+            }
+
+
+
+
+            
+            run.onclick = function() {
+                p = setInterval(pobej, 1);
+
+                function pobej() {
+                    if (pobeg > -15) {
+                        pobeg -= 0.05;
+                        oerso.style.left = pobeg + "%";
+                        oerso.src="run_pers.png"
+                    } else {
+                        fight.style.display = "none"
+                        clearInterval(p);
+                        home.style.display="block";
+
+                    }
+                }
+
+            }
+
+
+            hp_progress.max = hp;
+            hp_progress.value = hp;
+            hp_count.innerHTML = hp;
+
+            boss_hp_progress.max = bosshp;
+            boss_hp_progress.value = bosshp;
+
+            hp_poision.onclick = function() {
+                e = setInterval(hp_use, 1);
+                var helth = getRandomInt(100, 200);
+                person_damage.innerHTML = "+ " + helth;
+                hp_progress.value += helth;
+                hp_count.innerHTML = hp_progress.value;
+
+                function hp_use() {
+
+                    console.log(hp);
+
+
+                    if (person_damage_up >= 10) {
+
+                        hp_poision.style.display = "none "
+
+oerso.src="pers_drink.png"
+                        person_damage.style.display = "block ";
+                        person_damage.style.top = person_damage_up + "% "
+                        person_damage_up -= 0.1;
+                        person_damage.style.color = "rgba(0, 255, 0, " + person_damage_prosra + ") "
+                        person_damage_prosra -= 0.003;
+                    } else {
+                        oerso.src="perso.jpg"
+                        hp_poision.style.display = "block "
+                        person_damage.style.display = "none ";
+                        clearInterval(e);
+                        person_damage_up = 55;
+                        person_damage_prosra = 1;
+                    }
+
+                }
+            }
+
+            atack.onclick = function() {
+                fire_ball_person.style.display = "block ";
+                var a = setInterval(move_to_boss, 1);
+                var pdmg = getRandomInt(1000, 2000);
+                var bdmg = getRandomInt(100, 200);
+
+                person_damage.innerHTML = "- " + bdmg;
+                boss_damage.innerHTML = "- " + pdmg;
+
+                function move_to_boss() {
+                    atack.style.display = "none "
+                    if (x <= 78) {
+                        fire_ball_person.style.display = "block ";
+                        fire_ball_person.style.left = x + "% "
+                        x += 1;
+                    } else {
+                        clearInterval(a);
+                        fire_ball_person.style.display = "none ";
+                        x = 6;
+                        d = setInterval(prosrachnost_boss, 1);
+                        boss_hp_progress.value -= pdmg;
+if(boss_hp_progress.value==0){
+    run.style.display="none"
+    atack.style.display="none"
+    hp_poision.style.display="none"
+    ded.style.display="block"
+    ded.innerHTML="YOU WON"
+    live.style.display="block"
+    live.innerHTML="Забрать награды"
+    bosss.src="ded_boss.png"
+    bosss.style.left="67.3%"
+    bosss.style.top="27%"
+    boss_hp_progress.style.display="none"
+}
+                        function prosrachnost_boss() {
+                            if (boss_damage_up >= 10) {
+                                //bosss.src="bos_damage_gaing.jpg "
+                                boss_damage.style.display = "block ";
+                                boss_damage.style.top = boss_damage_up + "% "
+                                boss_damage_up -= 0.1;
+                                boss_damage.style.color = "rgba(255, 0, 0, " + boss_damage_prosra + ") "
+                                boss_damage_prosra -= 0.005;
+                            } else {
+                                boss_damage.style.display = "none ";
+                                clearInterval(d);
+                                boss_damage_up = 25;
+                                boss_damage_prosra = 1;
+                                
+                            }
+
+                        }
+if(boss_hp_progress.value!=0){
+                        var b = setInterval(move_to_person, 1);
+
+                        function move_to_person() {
+
+                            if (y >= 3) {
+                                fire_ball_boss.style.display = "block ";
+                                fire_ball_boss.style.left = y + "% "
+                                y -= 0.5;
+                            } else {
+                                
+                                clearInterval(b);
+                                fire_ball_boss.style.display = "none";
+                                y = 78;
+                                c = setInterval(prosrachnost_person, 1);
+                                hp_progress.value -= bdmg;
+                                hp_count.innerHTML = hp_progress.value;
+                                if(hp_progress.value==0){
+                                run.style.display="none"
+                                atack.style.display="none"
+                                hp_poision.style.display="none"
+                                live.style.display="block"
+                                ded.style.display="block"
+                                ded.innerHTML="YOU DIED"
+                                oerso.src="ded_pers.png"
+                                oerso.style.top="67%"
+                                oerso.style.left="-3%"}
+
+                                function prosrachnost_person() {
+                                    if (person_damage_up >= 46) {
+                                        /*oerso.src="perso_dmade_gaing.png "
+                                        oerso.style.top="60% "
+                                        oerso.style.height="40% "*/
+                                        person_damage.style.display = "block";
+                                        person_damage.style.top = person_damage_up + "% "
+                                        person_damage_up -= 0.1;
+                                        person_damage.style.color = "rgba(255, 0, 0, " + person_damage_prosra + ") "
+                                        person_damage_prosra -= 0.005;
+                                    } else {
+                                        /*oerso.src="perso.jpg "
+                                        oerso.style.top="50% "
+                                        oerso.style.height="50% "*/
+                                        person_damage.style.display = "none ";
+                                        clearInterval(c);
+                                        person_damage_up = 55;
+                                        person_damage_prosra = 1;
+                                        if(hp_progress.value!=0){atack.style.display = "block"}
+                                    }
+
+                                }
+                            }
+
+                        }}
+                    }
+
+                }
+
+
+
+            }
+        </script>
+    </div>
+
+</body>
+
+</html>
